@@ -1,0 +1,77 @@
+#taste {
+}
+#taste .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px; 
+}
+#taste .inner::before{
+  content: "";
+  background-image: src(../img/left.png);
+}
+#taste .inner h2.h2 {
+  margin-bottom: 50px;
+}
+#taste .inner ul.list {
+  display:flex;
+  
+  width: 90%;
+  justify-content: space-between;
+  column-gap: 20px;
+  text-align: center;
+}
+#taste .inner ul.list li {
+  /*! border: 1px solid #eee; */
+  width: calc(100%/6);
+  /*부모요소에서 6등분*/
+}
+#taste .inner ul.list li:nth-child(1):before{
+    background-image: url(../img/1.png);
+    background-color: #efe4db;
+}
+#taste .inner ul.list li:nth-child(2):before{
+    background-image: url(../img/2.png);
+
+    background-color: #f6efe0;
+}
+#taste .inner ul.list li:nth-child(3):before{
+    background-image: url(../img/3.png);
+    background-color: #f9e5e5;
+}
+#taste .inner ul.list li:nth-child(4):before{
+    background-image: url(../img/4.png);
+    background-color: #ededed;
+}
+#taste .inner ul.list li:nth-child(5):before{
+    background-image: url(../img/5.png);
+    background-color: #e4f3f9;
+}
+#taste .inner ul.list li:nth-child(6):before{
+    background-image: url(../img/6.png);
+    background-color: #fcf4e5;
+}
+#taste .inner ul.list li::before{
+  content:"";
+  display: block;
+ width: 100%;
+  background-color: #efe4db;
+  height: 262px;
+  border-radius: 6px;
+  margin-bottom: 11px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#taste .inner ul.list li a {
+  width: 100%;
+  display: block;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+#taste .inner ul.list li a::before{
+  content: "VIEW MORE";
+  background-color: red;
+  display: block;
+  width: 100%;
+  color: white;
+}

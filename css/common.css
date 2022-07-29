@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'Binggrae-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Binggrae-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Binggrae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.hide{
+  display: none;
+}
+input::placeholder{
+  color: gray;
+  font-size: 20px;
+  box-sizing: border-box;
+  width: 1000px;
+  /*! text-align: left; */
+  /*! width: 90%; */
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder { /* WebKit browsers */
+  color:transparent;
+}
+
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:transparent;
+}
+
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:transparent;
+}
+
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:transparent;
+}
+.inner{
+  width: 95%;
+  margin: 0 auto;
+}
+.innerPadding{
+/*  카멜케이스방식 : 첫자는 소문자로 시작. 다른 단어 첫자는 대문자 */
+padding-top:20px;
+  padding-bottom:60px;
+}
+/* hn태그스타일링 */
+.h2{
+  font-size: 35px;
+  font-weight: 700;
+    font-family: 'Binggrae-Bold';
+  /*! font-family: 'Noto Sans KR', sans-serif; */ 
+}
+.h3{
+  font-size: 31px;
+  font-weight: 700;
+    font-family: 'Binggrae-Bold';
+}
+/* flex */
+.flex{
+    display: flex;
+  }
+.flexBetween{
+  justify-content: space-between;
+}
+.flexAround{
+  justify-content: space-around;
+/* 하나의 대상 양쪽에 균등하게 들어감 */
+}
+.flexEvenly{
+  justify-content: space-evenly;
+/* 대상끼리 간격이 일정함   */
+}
+.flexCenter{
+  justify-content: center;
+}
+.flexColumn{
+  flex-direction: column;
+}
+.flexAlignCenter{
+  align-items: center;
+}
+.flexWrap{
+  flex-wrap: wrap;
+}
+.br{
+  display: block;
+}
+
+.p{
+  line-height: 1.5;
+}
+/* 패딩 */
+.padding50{
+  padding: 50px;
+}
+/* 버튼 */
+.submit{
+  font-weight: bold;
+  background-color: #e82b27;
+  width: 130px;
+  height: 40px;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 20px;
+  font-size: 14px;
+}

@@ -1,0 +1,254 @@
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+  padding-left: 190px;
+}
+header{
+  position: fixed;
+/* position이 fix되면 영역이 내용만큼 작아지게 됨   */
+  width:10%;
+  z-index: 2;
+  height: 100%;
+  background-color: #eee;
+  left: 0;
+/*   position fix도 body에 padding을 주면 영향을 받음. left로 설정해줌.  */
+}
+
+header:hover::before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  border: 1px solid #ccc;
+  left:187px;
+  z-index: 1;
+  box-sizing: border-box;
+  display: block;
+}
+header div.inner{ /* 하위선택자  */
+height: 100%;
+padding-top: 10%;
+padding-bottom: 10%;
+box-sizing: border-box;
+}
+
+header .inner,
+header .inner>*{ /* > 자식선택자를 의미 */
+/*! border: 1px solid #333; */
+}
+header .inner {
+  
+}
+header .inner h1 {
+  
+}
+header .inner h1 a {
+background-image: url(../img/logo-pc.png);
+width: 142px;
+height: 35px;
+display: block;
+font-size: 0;
+/*! padding: 20px 0; */
+}
+header .inner ul.gnb::before{
+  content: "";
+  background-color: white;
+  width: 0px;
+  position: absolute;
+  z-index: -1;
+  transition: all 1s;
+  box-sizing: border-box;
+  top: -0px;
+  left: -50px;
+  height: 100%;
+}
+header .inner ul.gnb::after {
+  content: "";
+  width: 100%;
+  height: 0px;
+  position: absolute;
+  top: 86px;
+  left: -2.5%;
+  z-index: -1;
+  /*! border: 1px solid #ccc; */
+display:none;
+}
+
+header .inner ul.gnb:hover::after{
+  
+  display: block;
+}
+header .inner ul.gnb:hover::before{
+  /*! display: block; */
+   border-radius: 50px;
+   width: 1000px;
+}
+
+header .inner ul.gnb {
+display: flex;
+gap: 15px;
+align-self: flex-start;
+/*! box-sizing: border-box; */
+}
+header .inner ul.gnb:hover li h2{
+  
+  width: 200px;
+}
+header .inner ul.gnb>li {
+  
+  display: flex;
+  justify-content: start;
+}
+
+header .inner ul.gnb li ul.gnbsub{
+  display: none;
+}
+header .inner ul.gnb:hover li ul.gnbsub{
+/*   내가 hover한 대상의 하위를 보여줌 */
+  display: flex;
+  justify-content: flex-start;
+  width: 800px;
+  gap: 10px;
+}
+header .inner ul.gnb:hover ul.gnbsub{
+  opacity: 0;
+ 
+  animation-name: gnbfadein;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+  margin-top : 27px;
+}
+@keyframes gnbfadein{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+header .inner ul.gnb>li>h2 a {
+font-weight: 400;
+padding: 20px 21px;
+display: block;
+/*! line-height: 3; */ /* 블럭에게만 적용되는 속성 */
+font-size: 20px;
+padding-top: 26.5px;
+/*   outline은 박스 크기에 영향을 끼치지 않음 */
+position: relative;
+transition: all 0.5s;
+}
+header .inner ul.gnb > li:hover > h2 a::after{
+ content: "";
+  display: block;
+  width: calc(100% - 42px);
+  border-bottom: 2px solid red;
+  transform: translateY(39px) scaleX(100%);
+  position: absolute;
+  left: 21px;
+/*   origin : 중심축 */
+}
+header .inner ul.gnb > li:hover > h2 a{
+  color: red;
+}
+header .inner ul.gnb > li > h2 a::after{
+  content: "";
+  display: block;
+  width: calc(100% - 42px);
+  border-bottom: 2px solid red;
+  transform: translateY(39px) scaleX(0);
+  position: absolute;
+  left: 21px;
+  transition: all 0.5s;
+  transform-origin: 50%;
+}
+  header .inner ul.gnb>li>a {
+  font-weight: 400;
+  padding: 20px 50px;
+  display:block;
+/*  padding은 영역을 설정해주는 태그. block으로 변경해주어야 안정적임.  */
+    line-height: 3;
+/*  block에만 적용되는 속성    */
+  }
+header .inner ul.gnb li a:hover{
+  color: red;
+}
+/* gnb 서브메뉴 */
+/* css는 hover가 한계. 갑자기 사라지는건 어쩔 수 없음. 자바스크립트나 제이쿼리에서 가능.  */
+
+header .inner ul.gnb li ul.gnbsub li{
+  /*! box-sizing: border-box; */
+}
+header .inner ul.gnb li ul.gnbsub li a{
+  line-height: 2;
+}
+  header .inner ul.enb {
+    display: flex; 
+    gap: 15px;
+    position: absolute;
+    right: calc(-1920px + 225px);
+  }
+
+  header .inner ul.enb li {
+
+  }
+  header .inner ul.enb li select {
+  background-color: transparent;
+  border: none;
+  }
+  header .inner ul.enb li select option{
+
+  }
+header .inner ul.enb>li>a:hover{ 
+border-color: red;
+}
+header .inner ul.enb li a:hover::before{
+background-color:red;
+}
+header .inner ul.enb li a::before{
+  content: "";
+  width: 100%;
+  display: block;
+  height: 3px;
+  background-color: #666;
+}
+  header .inner ul.enb li a{
+  font-size: 0;
+  width: 20px;
+  height: 13px;
+  display: block;
+  border-top: 3px solid #666;
+  border-bottom: 3px solid #666;
+  display: flex;
+  align-items: center;
+  }
+  header .inner ul.enb li a::before{
+  content: "";
+  /*! border-top: 3px solid #666; */
+  width: 100%;
+  display: block;
+  height: 3px;
+  background-color: #666;
+  }
+  header .inner ul.tnb{
+  right: 0;
+  top: -23px;
+  font-size: 12px;
+  display: flex;
+  gap: 14px;
+  }
+  header .inner ul.tnb li{
+
+  }
+  header .inner ul.tnb li a{
+
+  }
+  header .inner ul.tnb li a::after{
+  content: "";
+
+  background-image: url(../img/open.svg);
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  background-size: contain;
+  vertical-align: -4px;
+  }
